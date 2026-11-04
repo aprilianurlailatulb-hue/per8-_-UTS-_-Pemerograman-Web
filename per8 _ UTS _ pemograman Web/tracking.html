@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tracking Pengiriman - Toko Buku Online</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <nav class="navbar">
+    <a href="dashboard.html" class="brand">📚 SmartBook Store</a>
+    <div class="nav-links">
+      <a href="dashboard.html">Dashboard</a>
+      <a href="stok.html">Katalog Stok</a>
+      <a href="checkout.html">Checkout</a>
+      <a href="tracking.html" class="active">Tracking DO</a>
+      <a href="#" onclick="logout()" style="color: var(--danger);">Logout</a>
+    </div>
+  </nav>
+
+  <div class="container">
+    <div class="card">
+      <h2>Cek Tracking Delivery Order</h2>
+      <div style="display: flex; gap: 1rem; margin-top: 1rem;">
+        <input type="text" id="inputDO" class="form-control" placeholder="Masukkan No DO" value="DO-20261104-001">
+        <button class="btn" onclick="cariTracking()">Cari Status</button>
+      </div>
+
+      <div id="trackingResult" style="display: none; margin-top: 2rem;">
+        <hr style="border-color: var(--card-border); margin-bottom: 1.5rem;">
+        <h3>Detail Pengiriman</h3>
+        <p><strong>Nama Pemesan:</strong> <span id="trackPemesan"></span></p>
+        <p><strong>Ekspedisi:</strong> <span id="trackEkspedisi"></span></p>
+        <p><strong>Tanggal Kirim:</strong> <span id="trackTanggal"></span></p>
+        <p><strong>Total Pembayaran:</strong> <span id="trackTotal"></span></p>
+
+        <div class="progress-bar">
+          <div id="trackProgress" class="progress-fill" style="width: 0%;"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div id="toast" class="toast"></div>
+
+  <script src="js/data.js"></script>
+  <script src="js/script.js"></script>
+  <script>checkAuth();</script>
+</body>
+</html>

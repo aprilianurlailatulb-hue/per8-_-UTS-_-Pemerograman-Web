@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard - Toko Buku Online</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <nav class="navbar">
+    <a href="dashboard.html" class="brand">📚 SmartBook Store</a>
+    <div class="nav-links">
+      <a href="dashboard.html" class="active">Dashboard</a>
+      <a href="stok.html">Katalog Stok</a>
+      <a href="checkout.html">Checkout</a>
+      <a href="tracking.html">Tracking DO</a>
+      <a href="#" onclick="logout()" style="color: var(--danger);">Logout</a>
+    </div>
+  </nav>
+
+  <div class="container">
+    <div class="card">
+      <h1 id="greetingText">Selamat Datang!</h1>
+      <p style="color: var(--text-muted); margin-top: 0.5rem;">Sistem Informasi Pemesanan Buku Front-End UTS Pemrograman Web 1.</p>
+    </div>
+
+    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1.5rem;">
+      <div class="card" style="text-align: center; cursor: pointer;" onclick="window.location.href='stok.html'">
+        <div style="font-size: 2.5rem; margin-bottom: 0.5rem;">📦</div>
+        <h3>Informasi Stok / Katalog</h3>
+        <p style="color: var(--text-muted); font-size: 0.85rem; margin-top: 0.5rem;">Kelola data stok & lihat ketersediaan buku</p>
+      </div>
+
+      <div class="card" style="text-align: center; cursor: pointer;" onclick="window.location.href='checkout.html'">
+        <div style="font-size: 2.5rem; margin-bottom: 0.5rem;">🛒</div>
+        <h3>Form Checkout</h3>
+        <p style="color: var(--text-muted); font-size: 0.85rem; margin-top: 0.5rem;">Proses pesanan baru & detail pembayaran</p>
+      </div>
+
+      <div class="card" style="text-align: center; cursor: pointer;" onclick="window.location.href='tracking.html'">
+        <div style="font-size: 2.5rem; margin-bottom: 0.5rem;">🚚</div>
+        <h3>Tracking Pengiriman</h3>
+        <p style="color: var(--text-muted); font-size: 0.85rem; margin-top: 0.5rem;">Melacak paket dengan nomor DO</p>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/data.js"></script>
+  <script src="js/script.js"></script>
+  <script>
+    checkAuth();
+    updateGreeting();
+  </script>
+</body>
+</html>

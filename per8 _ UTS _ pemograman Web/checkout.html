@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Checkout Pemesanan - Toko Buku Online</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <nav class="navbar">
+    <a href="dashboard.html" class="brand">📚 SmartBook Store</a>
+    <div class="nav-links">
+      <a href="dashboard.html">Dashboard</a>
+      <a href="stok.html">Katalog Stok</a>
+      <a href="checkout.html" class="active">Checkout</a>
+      <a href="tracking.html">Tracking DO</a>
+      <a href="#" onclick="logout()" style="color: var(--danger);">Logout</a>
+    </div>
+  </nav>
+
+  <div class="container">
+    <div class="card">
+      <h2>Formulir Pemesanan & Pembayaran</h2>
+      <form style="margin-top: 1.5rem;" onsubmit="event.preventDefault(); showToast('Pesanan Berhasil Diproses! No DO: DO-20261104-001');">
+        <div class="form-group">
+          <label>Nama Pemesan</label>
+          <input type="text" class="form-control" value="Aprilia NurLailaTul Badriyah" required>
+        </div>
+        <div class="form-group">
+          <label>Email Pemesan</label>
+          <input type="email" class="form-control" value="aprilianurlailatulbadriyah@gmail.com" required>
+        </div>
+        <div class="form-group">
+          <label>Alamat Pengiriman</label>
+          <textarea class="form-control" rows="3" required>Jl. Cikarang Barat No. 45, Bekasi Regency, West Java</textarea>
+        </div>
+        <div class="form-group">
+          <label>Metode Pembayaran</label>
+          <select class="form-control">
+            <option>Transfer Bank (BCA / Mandiri)</option>
+            <option>E-Wallet (GoPay, OVO, ShopeePay)</option>
+            <option>COD (Bayar di Tempat)</option>
+          </select>
+        </div>
+        <button type="submit" class="btn" style="width: 100%; margin-top: 1rem;">Konfirmasi & Bayar Pesanan</button>
+      </form>
+    </div>
+  </div>
+
+  <div id="toast" class="toast"></div>
+
+  <script src="js/data.js"></script>
+  <script src="js/script.js"></script>
+  <script>checkAuth();</script>
+</body>
+</html>
